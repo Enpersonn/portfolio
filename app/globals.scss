@@ -21,6 +21,12 @@ body {
   background: linear-gradient(to bottom,
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  width: 100vw;
+  height: 100vh;
+}
+
+.content-height {
+  height: calc(100vh - 48px);
 }
 
 @layer utilities {
