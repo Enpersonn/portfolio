@@ -27,6 +27,10 @@ const HomeNavButton = styled(NextLink)`
         opacity: 0;
         transition: left 0.3s ease, opacity 0.3s ease;
         outline: none;
+
+        @media (max-width: 768px){
+            display: none;
+        }
     }
 
     &:hover::after {
@@ -58,6 +62,10 @@ const HomeNavButton = styled(NextLink)`
     
     &:focus::before {
         transform: scaleX(1);
+    }
+
+    @media (max-width: 768px){
+        font-size: 3rem;
     }
 `;
 
