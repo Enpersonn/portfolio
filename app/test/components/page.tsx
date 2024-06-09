@@ -41,7 +41,7 @@ export default function componentsPage() {
                 <SearchBar placeholder="Search" />
             </ComponentSegment>
             <ComponentSegment component="Slider">
-                <Slider />
+                <Slider value={5} min={0} max={10} step={10} />
             </ComponentSegment>
             <h2>Molecules</h2>
             <h2>Organisms</h2>
