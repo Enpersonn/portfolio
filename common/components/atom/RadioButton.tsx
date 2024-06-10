@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "./Button";
+import Button from "./Button/Button";
 
 type RadioButtonProps = {
     title: string;
@@ -17,13 +17,13 @@ const RadioForm = ({
     const [selected, setSelected] = useState<string | null>(initialValue ?? radioButtons[0].value);
     
     return (
-        <div className=" flex gap-2 justify-start w-full">
+        <form className=" flex gap-2 justify-start w-full">
             {radioButtons.map((button) => (
                 <Button key={button.value} type="radio" id={button.value} active={selected === button.value} setValue={() => {setSelected(button.value)}} >
                     {button.title}
                 </Button>
             ))}
-        </div>
+        </form>
     )
 }
 

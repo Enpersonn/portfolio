@@ -18,9 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom right, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
   width: 100vw;
   height: 100vh;
 }
@@ -39,4 +37,24 @@ body {
 h2 {
   font-size: 3rem;
   font-weight: 300;
+}
+
+.fancyButton {
+  padding: 2px 5px;
+  border: 1px solid #86868663;
+  background-image: linear-gradient(to top right, #2F846F81, #ffffff00);
+  background-repeat: no-repeat;
+  background-position: -100px;
+
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: #a3e7d6da;
+    border-color: #A3E7D663;
+    background-position: -20px;
+
+    outline: none;
+
+  }
 }

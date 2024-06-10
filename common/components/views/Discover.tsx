@@ -1,7 +1,7 @@
 import { usePathname } from "next/navigation";
 import RadioForm from "../atom/RadioButton";
 import SearchBar from "../atom/SearchBar";
-import Button from "../atom/Button";
+import Button from "../atom/Button/Button";
 import { useState } from "react";
 import { clsx } from "@/common/utils/classes";
 
