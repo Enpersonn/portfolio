@@ -45,6 +45,10 @@ position: relative;
     }
 }
 
+&:active {
+    transform: scale(0.9);
+}
+
 ${
 	props.active &&
 	css`
