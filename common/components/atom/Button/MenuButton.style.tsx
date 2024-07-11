@@ -1,14 +1,12 @@
 import { css } from "styled-components";
 
-
 export type MenuButtonProps = {
-    type: "menu";
-    active?: boolean;
-    onClick?: () => void;
-}
+	type: "menu";
+	active?: boolean;
+	onClick?: () => void;
+};
 
-
-const menuButtonStyle = (props : MenuButtonProps) => css`
+const menuButtonStyle = (props: MenuButtonProps) => css`
 font-size: 1.5rem;
 padding: 5px 10px;
 border: 0px solid #86868663;
@@ -47,7 +45,9 @@ position: relative;
     }
 }
 
-${props.active && css`
+${
+	props.active &&
+	css`
     cursor: default;
     &::before {
         width: 100%;
@@ -58,7 +58,8 @@ ${props.active && css`
         color: #ffffff;
     }
     
-    `}
-`
+    `
+}
+`;
 
 export default menuButtonStyle;

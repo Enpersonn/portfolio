@@ -1,14 +1,13 @@
 import { css } from "styled-components";
 
 export type RadioButtonProps = {
-    type: "radio";
-    active?: boolean;
-    value?: string;
-    setValue?: () => void;
+	type: "radio";
+	active?: boolean;
+	value?: string;
+	setValue?: () => void;
+};
 
-}
-
-const radioButtonStyle = (props : RadioButtonProps) => css`
+const radioButtonStyle = (props: RadioButtonProps) => css`
 font-size: 0.8rem;
 padding: 2px 5px;
 border: 1px solid #86868663;
@@ -27,15 +26,17 @@ transition: all 0.2s ease;
     outline: none;
 }
     
-${props.active && css`
+${
+	props.active &&
+	css`
     cursor: default;
     border-color: #fff;
     background-position: 0rem;
     color: #fff;
 
 
-`}
 `
-
+}
+`;
 
 export default radioButtonStyle;
