@@ -1,15 +1,27 @@
-import { createClient } from 'next-sanity'
-
-
-const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-05-03'
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+import { createClient, type QueryParams } from 'next-sanity'
+import { projectId, dataset, apiVersion, useCdn } from '../env'
 
 
 export const client = createClient({
   projectId,
   dataset,
-  apiVersion,
-  perspective: 'published',
-  useCdn: true,
+  apiVersion: "2024-01-01",
+  useCdn: false,
 })
+
+export async function sanityFetch<QueryResponse>({
+  query,
+  params = {},
+  tags,
+}: {
+  query: string;
+  params?: QueryParams;
+  tags?: string[];
+}) {
+  return client.fetch<QueryResponse>(query, params, {
+    next: {
+      revalidate: process.env.NODE_ENV === 'development' ? 30 : 3600,
+      tags,
+    },
+  });
+}
