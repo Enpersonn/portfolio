@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.50.0",
     "next": "14.2.3",
+    "next-sanity": "^9.4.2",
     "react": "^18",
     "react-dom": "^18",
+    "sanity": "^3.50.0",
     "sass": "^1.77.3",
     "styled-components": "^6.1.11"
   },
