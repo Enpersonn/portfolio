@@ -1,20 +1,17 @@
 import styled from "styled-components";
 import menuButtonStyle, { type MenuButtonProps } from "./MenuButton.style";
 import radioButtonStyle, { type RadioButtonProps } from "./RadioButton.style";
+import Link from "next/link";
 
-export type ButtonProps =
-	| DefaultButtonProps
-	| RadioButtonProps
-	| MenuButtonProps;
+export type LinkProps = DefaultLinkProps | RadioButtonProps | MenuButtonProps;
 
-export type DefaultButtonProps = {
+export type DefaultLinkProps = {
 	type: "button";
 	size?: "sm" | "md" | "lg";
-	onClick?: () => void;
 	href?: string;
 };
 
-const Button = styled.button<ButtonProps>`
+const StyledLink = styled(Link)<LinkProps>`
     color: #fff;
     padding: 10px 20px;
     border: 1px solid #fff;
@@ -25,4 +22,4 @@ const Button = styled.button<ButtonProps>`
     ${(props) => props.type === "menu" && menuButtonStyle(props)}
 `;
 
-export default Button;
+export default StyledLink;

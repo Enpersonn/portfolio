@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 
 
-export const ARTICLE_QUERY = groq`*[ _type == "article" && slug.current == $slug ][0] {
+export const ARTICLES_QUERY = groq`*[_type == "article"] {
     _type,
     _createdAt,
     _updatedAt,
@@ -14,4 +14,5 @@ export const ARTICLE_QUERY = groq`*[ _type == "article" && slug.current == $slug
         entry,
     },
     "slug": slug.current
+
 }`;

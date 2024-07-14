@@ -4,6 +4,7 @@ export type MenuButtonProps = {
 	type: "menu";
 	active?: boolean;
 	onClick?: () => void;
+	href?: string;
 };
 
 const menuButtonStyle = (props: MenuButtonProps) => css`

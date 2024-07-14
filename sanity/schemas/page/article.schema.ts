@@ -29,8 +29,14 @@ export const article = defineType({
         {
         name: 'publishedAt',
         title: 'Published At',
-        type: 'datetime',
+        type: 'date',
+        
         validation: (Rule) => Rule.required(),
         },
+        {
+            name: 'entry',
+            title: 'Entry',
+            type: 'text',
+        }
     ],
 })

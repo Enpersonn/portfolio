@@ -1,7 +1,7 @@
-import type { articleContentType } from "@/common/types/organism/articleContent.type";
+import type { ArticleContentType } from "@/common/types/article/articleContent.type";
 import { TextFild } from "../wrapper/ContentWrapper";
 
-const ArticleContent = (props: articleContentType) => {
+const ArticleContent = (props: ArticleContentType) => {
 	return (
 		<TextFild>
 			<p>

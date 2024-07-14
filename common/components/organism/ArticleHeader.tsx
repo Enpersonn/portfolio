@@ -1,4 +1,4 @@
-import type { articleHeaderType } from "@/common/types/article/articleHeader.type";
+import type { ArticleHeaderType } from "@/common/types/article/articleHeader.type";
 import Header from "../molecules/Header";
 import TableOfContent from "../molecules/TableOfContent";
 import SanityImage from "../atom/SanityImage";
@@ -6,7 +6,7 @@ import { ImageFild } from "../wrapper/ContentWrapper";
 
 // <AuthorDate />
 
-const ArticleHeader = (props: articleHeaderType) => {
+const ArticleHeader = (props: ArticleHeaderType) => {
 	return (
 		<>
 			<Header

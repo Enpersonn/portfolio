@@ -1,10 +1,9 @@
 "use client";
 import StyledLink from "@/common/components/atom/Button/Link";
-import ArticlesView from "@/common/components/views/Articles.view";
+import SearchView from "@/common/components/views/Search.view";
 import { usePathname } from "next/navigation";
-import { Suspense } from "react";
 
-export default function ArticlesPage() {
+export default function SearchPage() {
 	const route = usePathname();
 
 	return (
@@ -21,9 +20,7 @@ export default function ArticlesPage() {
 					Search
 				</StyledLink>
 			</div>
-			<Suspense fallback={<div>Loading...</div>}>
-				<ArticlesView />
-			</Suspense>
+			<SearchView />
 		</>
 	);
 }

@@ -1,16 +1,12 @@
 import { clsx } from "@/common/utils/classes";
 
-const ContentWrapper = ({ children }: { children: React.ReactNode }) => {
-	return <div className="grid grid-cols-12 ">{children}</div>;
-};
-
 export const TextFild = ({
 	children,
 	className,
 }: { children: React.ReactNode; className?: string }) => {
 	return (
-		<div className={clsx(className, " col-span-6 col-start-4 my-10")}>
-			{children}
+		<div className={clsx(className, "grid grid-cols-12")}>
+			<div className="  col-span-6 col-start-4 my-10">{children}</div>
 		</div>
 	);
 };
@@ -20,10 +16,18 @@ export const ImageFild = ({
 	className,
 }: { children: React.ReactNode; className?: string }) => {
 	return (
-		<div className={clsx(className, " col-span-8 col-start-3 my-10 mb-20")}>
-			{children}
+		<div className={clsx(className, "grid grid-cols-12  ")}>
+			<div className=" col-span-8 col-start-3 my-10 mb-20">{children}</div>
 		</div>
 	);
 };
-
-export default ContentWrapper;
+export const ContentFild = ({
+	children,
+	className,
+}: { children: React.ReactNode; className?: string }) => {
+	return (
+		<div className={clsx(className, "grid grid-cols-12  ")}>
+			<div className=" col-span-10 col-start-2 my-10 mb-20">{children}</div>
+		</div>
+	);
+};

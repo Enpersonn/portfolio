@@ -1,10 +1,10 @@
-import type { articleContentType } from "../organism/articleContent.type";
-import type { articleFooterType } from "./articleFooter.type";
-import type { articleHeaderType } from "./articleHeader.type";
+import type { ArticleContentType } from "./articleContent.type";
+import type { ArticleFooterType } from "./articleFooter.type";
+import type { ArticleHeaderType } from "./articleHeader.type";
 
-export type articleType = {
+export type ArticleType = {
 	slug: string;
-	header: articleHeaderType;
-	content: articleContentType;
-	footer: articleFooterType;
+	header: ArticleHeaderType;
+	content: ArticleContentType;
+	footer: ArticleFooterType;
 };
