@@ -33,10 +33,21 @@ body {
   }
 }
 
+h1 {
+  font-size: 4rem;
+  font-weight: 300;
+
+}
 
 h2 {
   font-size: 3rem;
   font-weight: 300;
+}
+
+.entry {
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.5;
 }
 
 .fancyButton {

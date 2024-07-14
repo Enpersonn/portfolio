@@ -10,6 +10,7 @@ export const ARTICLE_QUERY = groq`*[ _type == "article" && slug.current == $slug
     "header": {
         title,
         publishedAt,
+        mainImage,
     },
     "slug": slug.current
 }`;

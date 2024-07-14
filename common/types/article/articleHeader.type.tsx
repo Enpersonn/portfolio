@@ -1,9 +1,8 @@
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import type { headerType } from "../molecules/header.type";
-import type { mainImageType } from "../molecules/mainImage.type";
 import type { tableOfContentType } from "../molecules/tableOfContent.type";
 
 export type articleHeaderType = {
-    header: headerType;
-    mainImage: mainImageType;
-    tableOfContent: tableOfContentType;
-};
+	mainImage: SanityImageSource;
+	tableOfContent: tableOfContentType;
+} & headerType;

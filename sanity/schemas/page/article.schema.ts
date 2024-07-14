@@ -13,6 +13,11 @@ export const article = defineType({
         validation: (Rule) => Rule.required(),
         },
         {
+            name: 'mainImage',
+            title: 'Main Image',
+            type: 'image',
+        },
+        {
         name: 'slug',
         title: 'Slug',
         type: 'slug',
