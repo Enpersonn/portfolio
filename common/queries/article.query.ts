@@ -2,7 +2,14 @@ import { groq } from "next-sanity";
 
 
 export const ARTICLE_QUERY = groq`*[ _type == "article" && slug.current == $slug ][0] {
-    ...,
-    "test": "test",
+    _type,
+    _createdAt,
+    _updatedAt,
+    _id,
+
+    "header": {
+        title,
+        publishedAt,
+    },
     "slug": slug.current
 }`;

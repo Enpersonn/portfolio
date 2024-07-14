@@ -1,19 +1,14 @@
 import { ARTICLE_QUERY } from "@/common/queries/article.query";
+import type { articleType } from "@/common/types/article/article.type";
 import { client, sanityFetch } from "@/sanity/lib/client";
 import type { QueryParams, SanityDocument } from "next-sanity";
 
-type Article = {
-	title: string;
-	slug: string;
-	publishedAt: string;
-};
-
 const getHook = async ({ params }: { params: QueryParams }) => {
-	return await sanityFetch<Article>({ query: ARTICLE_QUERY, params });
+	return await sanityFetch<articleType>({ query: ARTICLE_QUERY, params });
 };
 
 export default async function ArticlePage({ params }: { params: QueryParams }) {
-	const initialData = client.fetch<Article>;
+	const initialData = await getHook({ params });
 
 	return (
 		<>
