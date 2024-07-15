@@ -1,4 +1,4 @@
-import NextLink from 'next/link';
+import NextLink from "next/link";
 import styled, { css } from "styled-components";
 
 const HomeNavButtonStyle = css`
@@ -69,22 +69,19 @@ outline: none;
 }
 `;
 
-const HomeNavButtonLink = styled(NextLink)`${HomeNavButtonStyle}`
-const HomeNavButtonAction = styled.button`${HomeNavButtonStyle}`
+const HomeNavButtonLink = styled(NextLink)`${HomeNavButtonStyle}`;
+const HomeNavButtonAction = styled.button`${HomeNavButtonStyle}`;
 
-const HomeNavButton = ({href, onClick, children}: {href?: string, onClick?: () => void, children: React.ReactNode}) => {
-    if (href){
-
-        return (
-            <HomeNavButtonLink href={href}>
-            {children}
-        </HomeNavButtonLink>
-    )
-    }
-    return (
-        <HomeNavButtonAction onClick={onClick}>
-            {children}
-        </HomeNavButtonAction>
-    )
-}
+const HomeNavButton = ({
+	href,
+	onClick,
+	children,
+}: { href?: string; onClick?: () => void; children: React.ReactNode }) => {
+	if (href) {
+		return <HomeNavButtonLink href={href}>{children}</HomeNavButtonLink>;
+	}
+	return (
+		<HomeNavButtonAction onClick={onClick}>{children}</HomeNavButtonAction>
+	);
+};
 export default HomeNavButton;
