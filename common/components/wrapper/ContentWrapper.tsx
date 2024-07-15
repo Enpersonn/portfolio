@@ -6,7 +6,9 @@ export const TextFild = ({
 }: { children: React.ReactNode; className?: string }) => {
 	return (
 		<div className={clsx(className, "grid grid-cols-12")}>
-			<div className="  col-span-6 col-start-4 my-10">{children}</div>
+			<div className=" col-span-8 col-start-3 md:col-span-6 md:col-start-4 my-5 md:my-10">
+				{children}
+			</div>
 		</div>
 	);
 };
@@ -17,7 +19,9 @@ export const ImageFild = ({
 }: { children: React.ReactNode; className?: string }) => {
 	return (
 		<div className={clsx(className, "grid grid-cols-12  ")}>
-			<div className=" col-span-8 col-start-3 my-10 mb-20">{children}</div>
+			<div className=" col-span-10 col-start-2 md:col-span-8 md:col-start-3 my-5 md:my-10 md:mb-20">
+				{children}
+			</div>
 		</div>
 	);
 };

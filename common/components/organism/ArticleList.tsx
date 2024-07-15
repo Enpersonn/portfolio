@@ -11,17 +11,19 @@ const ArticleList = async () => {
 	});
 
 	return (
-		<div className=" grid gap-10 grid-cols-3">
+		<div className=" grid gap-10 md:grid-cols-3">
 			{Articles.map((article) => {
 				return (
 					<Link href={`/articles/${article.slug}`} key={article.slug}>
-						<Card key={article.slug}>
+						<Card className=" group" key={article.slug}>
 							<SanityImage
 								image={article.header.mainImage}
 								className=" rounded-[15px]"
 							/>
 							<div>
-								<h2>{article.header.title}</h2>
+								<h2 className=" group-hover:underline">
+									{article.header.title}
+								</h2>
 							</div>
 						</Card>
 					</Link>

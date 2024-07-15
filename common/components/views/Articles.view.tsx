@@ -7,7 +7,7 @@ export default function ArtilcesView() {
 	return (
 		<>
 			<TextFild>
-				<h1>Discover Page</h1>
+				<h1>Discover</h1>
 			</TextFild>
 			<ContentFild>
 				<Suspense fallback={<ArticleListSkeleton />}>
