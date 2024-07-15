@@ -6,7 +6,7 @@ export const TextFild = ({
 }: { children: React.ReactNode; className?: string }) => {
 	return (
 		<div className={clsx(className, "grid grid-cols-12")}>
-			<div className=" col-span-8 col-start-3 md:col-span-6 md:col-start-4 my-5 md:my-10">
+			<div className=" col-span-8 col-start-3 md:col-span-6 md:col-start-4 my-5">
 				{children}
 			</div>
 		</div>

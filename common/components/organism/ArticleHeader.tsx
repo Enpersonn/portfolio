@@ -14,15 +14,17 @@ const ArticleHeader = (props: ArticleHeaderType) => {
 				entry={props.entry}
 				publishedAt={props.publishedAt}
 			/>
-			<ImageFild>
-				<SanityImage
-					image={props.mainImage}
-					width={"full"}
-					aspect="3/1"
-					className=" rounded-[15px]"
-				/>
-			</ImageFild>
-			<TableOfContent {...props.tableOfContent} />
+			{props.mainImage && (
+				<ImageFild>
+					<SanityImage
+						image={props.mainImage}
+						width={"full"}
+						aspect="3/1"
+						className=" rounded-[15px]"
+					/>
+				</ImageFild>
+			)}
+			{props.tableOfContent && <TableOfContent {...props.tableOfContent} />}
 		</>
 	);
 };
