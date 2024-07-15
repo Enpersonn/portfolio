@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { ContentFild, TextFild } from "../wrapper/ContentWrapper";
 import ArticleList from "../organism/ArticleList";
+import ArticleListSkeleton from "../organism/ArticleList.skeleton";
 
 export default function ArtilcesView() {
 	return (
@@ -9,7 +10,7 @@ export default function ArtilcesView() {
 				<h1>Discover Page</h1>
 			</TextFild>
 			<ContentFild>
-				<Suspense fallback={<div>Loading...</div>}>
+				<Suspense fallback={<ArticleListSkeleton />}>
 					<ArticleList />
 				</Suspense>
 			</ContentFild>
