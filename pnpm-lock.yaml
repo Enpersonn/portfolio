@@ -17,6 +17,9 @@ importers:
       '@sanity/image-url':
         specifier: ^1.0.2
         version: 1.0.2
+      '@sanity/react-loader':
+        specifier: ^1.10.4
+        version: 1.10.4(@sanity/client@6.21.0)(react@18.3.1)
       '@sanity/vision':
         specifier: ^3.50.0
         version: 3.50.0(@babel/runtime@7.24.8)(@codemirror/lint@6.8.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.1)(codemirror@6.0.1(@lezer/common@1.2.1))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -30,7 +33,7 @@ importers:
         specifier: ^9.4.2
         version: 9.4.2(@sanity/client@6.21.0)(@sanity/icons@3.3.0(react@18.3.1))(@sanity/types@3.50.0)(@sanity/ui@2.6.8(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(next@14.2.3(@babel/core@7.24.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.50.0(@types/node@20.12.13)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.3)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       react:
-        specifier: ^18
+        specifier: ^18.3.1
         version: 18.3.1
       react-dom:
         specifier: ^18
@@ -1270,6 +1273,12 @@ packages:
     resolution: {integrity: sha512-2TjYEvOftD0v7ukx3Csdh9QIu44P2z7NDJtlC3qITJRYV36J7R6Vfd3trVhFnN77/7CZrGjqngrtohv8VqO5nw==}
     engines: {node: '>=18.0.0'}
 
+  '@sanity/core-loader@1.6.20':
+    resolution: {integrity: sha512-QmfpCtGFoa3WsGwCKZbkL/AnRYygqaVFucG4gQqo0s52YYVKA0bsAb/QOK1BvK27afFzr/BJ1jaD0tBuxxg/tg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@sanity/client': ^6.20.1
+
   '@sanity/diff-match-patch@3.1.1':
     resolution: {integrity: sha512-dSZqGeYjHKGIkqAzGqLcG92LZyJGX+nYbs/FWawhBbTBDWi21kvQ0hsL3DJThuFVWtZMWTQijN3z6Cnd44Pf2g==}
     engines: {node: '>=14.18'}
@@ -1357,6 +1366,13 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       '@sanity/client': ^6.20.1
+
+  '@sanity/react-loader@1.10.4':
+    resolution: {integrity: sha512-C7KIkac62fmIspTuS3ao70VGaxc8RJEx+SHuIblBBnBGWZy8VZq64kg/RGbxmV5isfdBqkh5ASdwB7YrhUOyjA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@sanity/client': ^6.20.1
+      react: ^18.3 || >=19.0.0-rc
 
   '@sanity/schema@3.50.0':
     resolution: {integrity: sha512-nu4s4Sn61QH7m80zn6pJE9PjjX8niFweLUYLCgivo4WhfzACmlhNOg6upOO55bS+sdrxV3z2WDWS70Abaf1+fQ==}
@@ -5360,6 +5376,10 @@ snapshots:
 
   '@sanity/color@3.0.6': {}
 
+  '@sanity/core-loader@1.6.20(@sanity/client@6.21.0)':
+    dependencies:
+      '@sanity/client': 6.21.0(debug@4.3.5)
+
   '@sanity/diff-match-patch@3.1.1': {}
 
   '@sanity/diff@3.50.0':
@@ -5513,6 +5533,12 @@ snapshots:
     dependencies:
       '@sanity/client': 6.21.0(debug@4.3.5)
       '@sanity/uuid': 3.0.2
+
+  '@sanity/react-loader@1.10.4(@sanity/client@6.21.0)(react@18.3.1)':
+    dependencies:
+      '@sanity/client': 6.21.0(debug@4.3.5)
+      '@sanity/core-loader': 1.6.20(@sanity/client@6.21.0)
+      react: 18.3.1
 
   '@sanity/schema@3.50.0(debug@4.3.5)':
     dependencies:
