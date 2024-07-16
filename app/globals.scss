@@ -34,20 +34,32 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 38px;
   font-weight: 500;
 
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 300;
 }
 
 .entry {
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
+}
+
+.teaser-title {
+  font-size: 14px;
+  font-weight: 500;
+
+}
+
+.teaser-text {
+  font-size: 12px;
+  font-weight: 300;
+
 }
 
 .fancyButton {
