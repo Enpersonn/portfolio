@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import menuButtonStyle, { type MenuButtonProps } from "./MenuButton.style";
 import radioButtonStyle, { type RadioButtonProps } from "./RadioButton.style";
