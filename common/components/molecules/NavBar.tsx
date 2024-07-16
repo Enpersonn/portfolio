@@ -1,25 +1,16 @@
-import { ArrowLeft, House } from "lucide-react";
-import Link from "next/link";
-import styled from "styled-components";
+import StyledLink from "../atom/Button/Link";
 
-const NavButton = styled(Link)`
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-    height: 28px;
-    border: 1px solid #86868663;
-    `;
-
-const NavBar = () => (
-	<nav className="  w-full h-[48px] grid grid-cols-12 items-center  border-b-[1px] border-[#86868663]">
-		<div className=" col-start-3 flex gap-3 ">
-			<NavButton href={"../"}>
-				<House size={18} />
-			</NavButton>
+const NavBar = ({ isSearchPage }: { isSearchPage?: boolean }) => {
+	return (
+		<div className=" w-full flex justify-center gap-5 font-extralight pt-5">
+			<StyledLink href={"../articles"} type="menu" active={!isSearchPage}>
+				Discover
+			</StyledLink>
+			<StyledLink type="menu" href="../search" active={isSearchPage}>
+				Search
+			</StyledLink>
 		</div>
-	</nav>
-);
+	);
+};
 
 export default NavBar;
