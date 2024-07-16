@@ -6,7 +6,7 @@ type T = any
 
 const useLoader = <T>(
     q: string,
-    params: QueryParams,
+    params?: QueryParams,
 ) => loadQuery<T>(q, params, {
     next: {
         revalidate: process.env.NODE_ENV === 'development' ? 30 : 3600,
