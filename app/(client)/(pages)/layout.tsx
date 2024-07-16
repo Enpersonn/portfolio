@@ -1,5 +1,6 @@
 "use client";
-import PageHeader from "@/common/components/molecules/PageHeader";
+
+import PageHeader from "@/common/components/organism/PageHeader";
 
 export default function PagesLayout({
 	children,
