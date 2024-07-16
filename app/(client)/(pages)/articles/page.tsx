@@ -1,29 +1,10 @@
-"use client";
-import StyledLink from "@/common/components/atom/Button/Link";
 import ArticlesView from "@/common/components/views/Articles.view";
-import { usePathname } from "next/navigation";
-import { Suspense } from "react";
+import useLoader from "@/common/hooks/useLoader";
+import { ARTICLES_QUERY } from "@/common/queries/articles.query";
+import type { PreviewArticleType } from "@/common/types/article/article.type";
 
-export default function ArticlesPage() {
-	const route = usePathname();
+export default async function ArticlesPage() {
+	const articles = await useLoader<PreviewArticleType[]>(ARTICLES_QUERY);
 
-	return (
-		<>
-			<div className=" w-full flex justify-center gap-5 font-extralight pt-5">
-				<StyledLink
-					href={"../articles"}
-					type="menu"
-					active={route === "/articles"}
-				>
-					Discover
-				</StyledLink>
-				<StyledLink type="menu" href="../search" active={route === "/search"}>
-					Search
-				</StyledLink>
-			</div>
-			<Suspense fallback={<div>Loading...</div>}>
-				<ArticlesView />
-			</Suspense>
-		</>
-	);
+	return <ArticlesView articles={articles.data} />;
 }
