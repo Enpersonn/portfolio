@@ -8,7 +8,7 @@ const ArticleListItem = (article: PreviewArticleType) => {
 		<Card key={article.slug}>
 			<div className=" group">
 				<SanityImage image={article?.teaserImage} className=" rounded-[15px]" />
-				<div>
+				<div className=" px-2">
 					<h2 className=" group-hover:underline">{article.teaserTitle}</h2>
 					<p className=" line-clamp-3">{article.teaserText}</p>
 				</div>
