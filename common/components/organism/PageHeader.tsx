@@ -1,6 +1,7 @@
-import { ArrowLeft, House } from "lucide-react";
+import { House } from "lucide-react";
 import Link from "next/link";
 import styled from "styled-components";
+import PageNavigation from "../molecules/PageNavigation";
 
 const NavButton = styled(Link)`
     border-radius: 50%;
@@ -18,6 +19,17 @@ const PageHeader = () => (
 			<NavButton href={"../"}>
 				<House size={18} />
 			</NavButton>
+		</div>
+		<div className=" col-span-7">
+			<PageNavigation
+				Pages={[
+					{ title: "Projects", href: "../projects" },
+					{ title: "Articles", href: "../articles/discover" },
+					{ title: "About", href: "../about" },
+					{ title: "Contact", href: "../contact" },
+				]}
+				size="sm"
+			/>
 		</div>
 	</nav>
 );
