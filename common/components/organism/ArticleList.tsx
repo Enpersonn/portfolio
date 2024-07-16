@@ -9,7 +9,7 @@ type ArticlesViewProps = {
 const ArticleList = async ({ articles }: ArticlesViewProps) => {
 	return (
 		<ContentFild>
-			<div className=" grid gap-10 md:grid-cols-3">
+			<div className=" grid gap-5 md:grid-cols-3 ">
 				{articles?.map((article) => {
 					return (
 						<div key={article.slug}>
