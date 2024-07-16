@@ -1,12 +1,5 @@
-import styled from "styled-components";
-
-const Card = styled.div`
-
-    border-radius: 15px;
-    padding-bottom: 5px;
-    overflow: hidden;
-    
-
-    `;
+const Card = ({ children }: { children: React.ReactNode }) => (
+	<div className=" rounded-[15px] pb-1 overflow-hidden">{children}</div>
+);
 
 export default Card;
