@@ -4,11 +4,11 @@ export type MenuButtonProps = {
 	type: "menu";
 	active?: boolean;
 	onClick?: () => void;
-	href?: string;
+	size?: "sm" | "md" | "lg";
 };
 
-const menuButtonStyle = (props: MenuButtonProps) => css`
-font-size: 1.5rem;
+const menuButtonStyle = ({ size = "md", ...props }: MenuButtonProps) => css`
+font-size: ${size === "sm" ? "0.8rem" : size === "md" ? "1.5rem" : "2rem"};
 padding: 5px 10px;
 border: 0px solid #86868663;
 background-color: transparent;
