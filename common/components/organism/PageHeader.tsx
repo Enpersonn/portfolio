@@ -20,7 +20,7 @@ const PageHeader = () => (
 				<House size={18} />
 			</NavButton>
 		</div>
-		<div className=" col-span-7">
+		<div className=" col-span-6 flex justify-center">
 			<PageNavigation
 				Pages={[
 					{ title: "Projects", href: "../projects" },
