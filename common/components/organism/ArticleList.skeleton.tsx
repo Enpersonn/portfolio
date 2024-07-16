@@ -15,6 +15,9 @@ const ArticleListSkeleton = () => (
 		<ArticleListFildSkeleton />
 		<ArticleListFildSkeleton />
 		<ArticleListFildSkeleton />
+		<ArticleListFildSkeleton />
+		<ArticleListFildSkeleton />
+		<ArticleListFildSkeleton />
 	</div>
 );
 
