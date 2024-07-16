@@ -10,7 +10,9 @@ export default function HomeView() {
 					<div className=" flex flex-col gap-2 items-start ">
 						<Suspense fallback={<div>Loading...</div>}>
 							<HomeNavButton href={"./projects"}>Projects</HomeNavButton>
-							<HomeNavButton href={"./articles"}>Articles</HomeNavButton>
+							<HomeNavButton href={"./articles/discover"}>
+								Articles
+							</HomeNavButton>
 							<HomeNavButton href={"./about"}>About</HomeNavButton>
 							<HomeNavButton href={"./contact"}>Contact</HomeNavButton>
 						</Suspense>
