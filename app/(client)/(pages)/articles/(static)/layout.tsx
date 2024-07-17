@@ -5,14 +5,16 @@ export default function StaticLayout({
 	children,
 }: { children: React.ReactNode }) {
 	return (
-		<div>
-			<PageNavigation
-				Pages={[
-					{ title: "Discover", href: "/articles/discover" },
-					{ title: "Search", href: "../articles/search" },
-				]}
-			/>
+		<>
+			<div className=" py-5 pt-20">
+				<PageNavigation
+					Pages={[
+						{ title: "Discover", href: "/articles/discover" },
+						{ title: "Search", href: "../articles/search" },
+					]}
+				/>
+			</div>
 			{children}
-		</div>
+		</>
 	);
 }
