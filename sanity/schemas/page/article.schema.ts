@@ -45,7 +45,7 @@ export const article = defineType({
         {
             name: 'entry',
             title: 'Entry',
-            type: 'text',
+            type: 'richText',
             group: 'articleHeader',
         },
         {
@@ -67,13 +67,12 @@ export const article = defineType({
             type: 'image',
         },
 
-        // {
-        //     name: 'content',
-        //     title: 'Content',
-        //     type: 'array',
-        //     of: [{type: 'block'}],
-        //     group: 'articleBody',
-        // },
+        {
+            name: 'content',
+            title: 'Content',
+            type: 'richText',
+            group: 'articleBody',
+        },
 
         {
             name: 'learnMore',

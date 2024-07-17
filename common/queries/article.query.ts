@@ -1,4 +1,5 @@
 import { groq } from "next-sanity";
+import { RICH_TEXT_QUERY } from "./rich-text.query";
 
 
 export const ARTICLE_QUERY = groq`*[ _type == "article" && slug.current == $slug ][0] {
@@ -13,5 +14,9 @@ export const ARTICLE_QUERY = groq`*[ _type == "article" && slug.current == $slug
         mainImage,
         entry,
     },
+    "body": {
+        content,
+    },
+
     "slug": slug.current
 }`;

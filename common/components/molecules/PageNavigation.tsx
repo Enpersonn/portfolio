@@ -1,6 +1,5 @@
 import { usePathname } from "next/navigation";
 import StyledLink from "../atom/Button/Link";
-import type { MenuButtonProps } from "../atom/Button/MenuButton.style";
 
 type PageLinkType = {
 	name?: string;
