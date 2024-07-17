@@ -5,7 +5,7 @@ import Image from "next/image";
 import getLength, { type AspectType } from "@/common/utils/getImageSize";
 import { clsx } from "@/common/utils/classes";
 
-type SanityImageProps = {
+export type SanityImageProps = {
 	image?: SanityImageSource;
 	aspect?: AspectType;
 	width?: number | "full";
