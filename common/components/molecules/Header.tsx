@@ -1,7 +1,6 @@
 import type { headerType } from "@/common/types/molecules/header.type";
-import Entry from "../atom/Entry";
-import { TextFild } from "../wrapper/ContentWrapper";
 import { Calendar } from "lucide-react";
+import { TextFild } from "../wrapper/ContentWrapper";
 import PortableText from "./portableText/PortableText";
 
 const Header = (props: headerType) => {

@@ -16,7 +16,7 @@ const PageHeader = () => {
 					<ArrowLeft size={18} />
 				</button>
 				<Link
-					href={"../"}
+					href={"/"}
 					className=" rounded-full size-[28px] flex items-center justify-center border-[1px] border-[#86868663] "
 				>
 					<House size={18} />
