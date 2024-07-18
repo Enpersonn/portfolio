@@ -1,15 +1,16 @@
+"use client";
 import type { PreviewArticleType } from "@/common/types/article/article.type";
 import ArticleListItem from "../molecules/ArticleListItem";
-import { ContentFild } from "../wrapper/ContentWrapper";
+import ContentFild from "../wrapper/ContentWrapper";
 
 type ArticlesViewProps = {
 	articles: PreviewArticleType[];
 };
 
-const ArticleList = async ({ articles }: ArticlesViewProps) => {
+const ArticleList = ({ articles }: ArticlesViewProps) => {
 	return (
 		<ContentFild>
-			<div className=" grid gap-5 md:grid-cols-3 ">
+			<div className=" grid gap-5 md:grid-cols-3 mt-10 ">
 				{articles?.map((article) => {
 					return (
 						<div key={article.slug}>

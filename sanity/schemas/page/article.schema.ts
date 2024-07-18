@@ -78,14 +78,14 @@ export const article = defineType({
             name: 'learnMore',
             title: 'Learn More',
             type: 'array',
-            of: [{type: 'url'}],
+            of: [{type: 'link'}],
             group: 'articleFooter',
         },
         {
             name: 'references',
             title: 'References',
             type: 'array',
-            of: [{type: 'url'}],
+            of: [{type: 'link'}],
             group: 'articleFooter',
         },
         {

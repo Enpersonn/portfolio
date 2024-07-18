@@ -16,7 +16,7 @@ const block: {
 	),
 
 	h3: ({ children }) => (
-		<div className=" my-5">
+		<div className=" my-5 mt-10">
 			<h3>{children}</h3>
 		</div>
 	),

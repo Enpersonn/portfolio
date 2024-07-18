@@ -2,7 +2,7 @@ import SearchBar from "../atom/SearchBar";
 
 export default function SearchView() {
 	return (
-		<div className=" flex flex-col items-center justify-center gap-1">
+		<div className=" flex flex-col items-center justify-center gap-1 mt-10">
 			<SearchBar type="text" placeholder="Search for projects..." />
 		</div>
 	);
