@@ -1,14 +1,47 @@
-const Components: {
+import type { PortableTextReactComponents } from "@portabletext/react";
+
+const block: {
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	[key: string]: (props: any) => React.ReactNode;
 } = {
-	normal: (props) => <p>{props.children}</p>,
-	h1: (props) => <h1>{props.children}</h1>,
-	h2: (props) => <h2>{props.children}</h2>,
-	h3: (props) => <h3>{props.children}</h3>,
-	h4: (props) => <h4>{props.children}</h4>,
-	h5: (props) => <h5>{props.children}</h5>,
-	h6: (props) => <h6>{props.children}</h6>,
+	normal: ({ children }) => (
+		<div className=" my-5">
+			<p>{children}</p>
+		</div>
+	),
+	h2: ({ children }) => (
+		<div className=" my-5 mt-10">
+			<h2>{children}</h2>
+		</div>
+	),
+
+	h3: ({ children }) => (
+		<div className=" my-5">
+			<h3>{children}</h3>
+		</div>
+	),
+
+	h4: ({ children }) => (
+		<div className=" my-5">
+			<h4>{children}</h4>
+		</div>
+	),
+
+	h5: ({ children }) => (
+		<div className=" my-5">
+			<h5>{children}</h5>
+		</div>
+	),
+
+	h6: ({ children }) => (
+		<div className=" my-5">
+			<h6>{children}</h6>
+		</div>
+	),
 };
 
-export default Components;
+const DefaultComponents: Partial<PortableTextReactComponents> = {
+	block: block,
+};
+
+export default DefaultComponents;

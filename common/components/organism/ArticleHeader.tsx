@@ -2,30 +2,30 @@ import type { ArticleHeaderType } from "@/common/types/article/articleHeader.typ
 import Header from "../molecules/Header";
 import TableOfContent from "../molecules/TableOfContent";
 import SanityImage from "../atom/SanityImage";
-import { ImageFild } from "../wrapper/ContentWrapper";
+import ContentWrapper from "../wrapper/ContentWrapper";
 
 // <AuthorDate />
 
 const ArticleHeader = (props: ArticleHeaderType) => {
 	return (
-		<>
+		<ContentWrapper>
 			<Header
 				title={props.title}
 				entry={props.entry}
 				publishedAt={props.publishedAt}
 			/>
 			{props.mainImage && (
-				<ImageFild>
+				<div>
 					<SanityImage
 						image={props.mainImage}
 						width={"full"}
 						aspect="3/1"
 						className=" rounded-[15px]"
 					/>
-				</ImageFild>
+				</div>
 			)}
 			{props.tableOfContent && <TableOfContent {...props.tableOfContent} />}
-		</>
+		</ContentWrapper>
 	);
 };
 
