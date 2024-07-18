@@ -25,10 +25,10 @@ const PageHeader = () => {
 			<div className=" col-span-6 flex justify-center">
 				<PageNavigation
 					Pages={[
-						{ title: "Projects", href: "../projects" },
-						{ title: "Articles", href: "../articles/discover" },
-						{ title: "About", href: "../about" },
-						{ title: "Contact", href: "../contact" },
+						{ title: "Projects", href: "/projects" },
+						{ title: "Articles", href: "/articles/discover" },
+						{ title: "About", href: "/about" },
+						{ title: "Contact", href: "/contact" },
 					]}
 					size="sm"
 				/>
