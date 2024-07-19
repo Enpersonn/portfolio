@@ -24,7 +24,7 @@ const ArticleHeader = (props: ArticleHeaderType) => {
 					/>
 				</div>
 			)}
-			{props.tableOfContent && <TableOfContent {...props.tableOfContent} />}
+			{props.headlines && <TableOfContent headlines={props.headlines} />}
 		</ContentWrapper>
 	);
 };

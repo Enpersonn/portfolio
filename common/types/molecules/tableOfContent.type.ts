@@ -1,4 +1,6 @@
+import type { SanityRichtTextType } from "../atom/richText.type";
 
 export type tableOfContentType = {
-    header : string;
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    headlines : any[];
 }

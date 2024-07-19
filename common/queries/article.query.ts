@@ -13,6 +13,8 @@ export const ARTICLE_QUERY = groq`*[ _type == "article" && slug.current == $slug
         publishedAt,
         mainImage,
         entry,
+        content,
+        "headlines": content[style match "h*"] 
     },
     "body": {
         content,
@@ -20,3 +22,5 @@ export const ARTICLE_QUERY = groq`*[ _type == "article" && slug.current == $slug
 
     "slug": slug.current
 }`;
+
+// && string::startsWith(style[0], "h")
