@@ -65,6 +65,7 @@ export const article = defineType({
             name: 'mainImage',
             title: 'Main Image',
             type: 'image',
+            group: 'articleHeader',
         },
 
         {
