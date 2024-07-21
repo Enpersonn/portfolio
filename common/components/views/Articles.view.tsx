@@ -1,10 +1,10 @@
-import type { PreviewArticleType } from "@/common/types/article/article.type";
-import ArticleList from "../organism/ArticleList";
+import type { PreviewPageType } from "@/common/types/article/article.type";
+import PageList from "../organism/PageList";
 
 type ArticlesViewProps = {
-	articles: PreviewArticleType[];
+	articles: PreviewPageType[];
 };
 
 export default function ArtilcesView({ articles }: ArticlesViewProps) {
-	return <ArticleList articles={articles} />;
+	return <PageList pages={articles} />;
 }

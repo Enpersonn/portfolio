@@ -10,7 +10,7 @@ export type ArticleType = {
 	footer: ArticleFooterType;
 };
 
-export type PreviewArticleType = {
+export type PreviewPageType = {
 	slug: string;
 	teaserImage?: SanityImageSource;
 	teaserTitle: string;
