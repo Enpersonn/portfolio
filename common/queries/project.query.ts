@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-const PROJECT_QUERY = groq`
+export const PROJECT_QUERY = groq`
 *[_type == "project" && slug.current == $slug ] | order(publishedAt desc) {
   
   _type,
