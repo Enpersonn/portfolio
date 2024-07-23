@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const SearchBarDefault = styled.input`
     width: 50vw;
@@ -27,7 +27,6 @@ const SearchBarDefault = styled.input`
 
 `;
 
-
 const SearchBarSmall = styled.input`
     max-width: 20vw;
     border-bottom: 1px solid #86868663;
@@ -47,15 +46,18 @@ const SearchBarSmall = styled.input`
         width: 80vw;
         font-size: 1rem;
     }
-`
+`;
 
-type searchBarProps = 
-{
-    small?: boolean
-} & React.InputHTMLAttributes<HTMLInputElement>
+type searchBarProps = {
+	small?: boolean;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-const SearchBar = ({small = false, ...props}  : searchBarProps) => {
-    return small ? <SearchBarSmall {...props} /> : <SearchBarDefault {...props} />
-}
+const SearchBar = ({ small = false, ...props }: searchBarProps) => {
+	return small ? (
+		<SearchBarSmall {...props} />
+	) : (
+		<SearchBarDefault {...props} />
+	);
+};
 
 export default SearchBar;

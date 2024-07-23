@@ -1,6 +1,6 @@
 import Card from "../wrapper/Card";
 
-export const ArticleListFildSkeleton = () => (
+const PageListFildSkeleton = () => (
 	<Card>
 		<div className="animate-pulse rounded-[15px] aspect-[16/9] w-full bg-[#ffffff1c]" />
 		<div className=" p-4">
@@ -10,15 +10,13 @@ export const ArticleListFildSkeleton = () => (
 	</Card>
 );
 
-const ArticleListSkeleton = () => (
-	<div className=" grid gap-10 md:grid-cols-3">
-		<ArticleListFildSkeleton />
-		<ArticleListFildSkeleton />
-		<ArticleListFildSkeleton />
-		<ArticleListFildSkeleton />
-		<ArticleListFildSkeleton />
-		<ArticleListFildSkeleton />
+const PageListSkeleton = ({ n = 6 }: { n?: number }) => (
+	<div className=" grid gap-5 md:grid-cols-3 mt-10 ">
+		{[...Array(n)].map((_, i) => (
+			// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+			<PageListFildSkeleton key={i} />
+		))}
 	</div>
 );
 
-export default ArticleListSkeleton;
+export default PageListSkeleton;

@@ -1,16 +1,15 @@
 "use client";
-import type { PreviewPageType } from "@/common/types/article/article.type";
+import type { PreviewPageType } from "@/common/types/page/pages.type";
 import PageListItem from "../molecules/PageListItem";
-import ContentFild from "../wrapper/ContentWrapper";
+import ContentWrapper from "../wrapper/ContentWrapper";
 
 type PagesViewProps = {
 	pages: PreviewPageType[];
 };
 
-const PageList
- = ({ pages }: PagesViewProps) => {
+const PageList = ({ pages }: PagesViewProps) => {
 	return (
-		<ContentFild>
+		<ContentWrapper>
 			<div className=" grid gap-5 md:grid-cols-3 mt-10 ">
 				{pages?.map((page) => {
 					return (
@@ -20,9 +19,8 @@ const PageList
 					);
 				})}
 			</div>
-		</ContentFild>
+		</ContentWrapper>
 	);
 };
 
-export default PageList
-;
+export default PageList;

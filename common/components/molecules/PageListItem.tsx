@@ -1,7 +1,7 @@
 "use client";
-import type { PreviewPageType } from "@/common/types/article/article.type";
 import Link from "next/link";
 import SanityImage from "../atom/SanityImage";
+import type { PreviewPageType } from "@/common/types/page/pages.type";
 
 const PageListItem = (page: PreviewPageType) => {
 	return (

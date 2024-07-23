@@ -2,5 +2,5 @@
 import SearchView from "@/common/components/views/Search.view";
 
 export default function SearchPage() {
-	return <SearchView />;
+	return <SearchView type="article" />;
 }
