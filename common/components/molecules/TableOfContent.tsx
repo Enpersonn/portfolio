@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const TableOfContent = ({ headlines }: tableOfContentType) => {
 	return (
-		<div>
+		<div className=" mt-20">
 			<div className=" w-full border-b-[1px] border-white">
 				<h2>Table of content</h2>
 			</div>

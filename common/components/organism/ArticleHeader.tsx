@@ -1,7 +1,7 @@
-import type { ArticleHeaderType } from "@/common/types/article/articleHeader.type";
+import type { ArticleHeaderType } from "@/common/types/page/article/articleHeader.type";
+import SanityImage from "../atom/SanityImage";
 import Header from "../molecules/Header";
 import TableOfContent from "../molecules/TableOfContent";
-import SanityImage from "../atom/SanityImage";
 import ContentWrapper from "../wrapper/ContentWrapper";
 
 // <AuthorDate />

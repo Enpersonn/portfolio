@@ -91,6 +91,35 @@ p {
 
 }
 
+.image-caption {
+  font-size: 12px;
+  font-weight: 300;
+  color: #868686d2;
+
+}
+
+blockquote {
+  display: flex;
+
+
+  .quote-text {
+    font-size: 32px;
+    font-weight: 200;
+    font-style: italic;
+    line-height: 1.5;
+
+    margin-left: 10px;
+    margin-bottom: 5px;
+
+    padding-left: 20px;
+    border-left: 1px solid #fff;
+  }
+
+  .quote-author {
+    margin-left: 30px
+  }
+}
+
 .fancyButton {
   padding: 2px 5px;
   border: 1px solid #86868663;
