@@ -3,10 +3,10 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 
-export default function useSearch({ page, search, type = "article"}: { page: number; search: string; type: string }) {
+export default function useSearch({ page, search, type = "article"}: { page: number; search: string; type?: string }) {
     const queryKey =  ['search', {page, search, type}];
     const isSearchEnabled = search.length > 0;
-    
+
     const res = useQuery<{
         items: PreviewPageType[];
         count: number;

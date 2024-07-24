@@ -1,8 +1,8 @@
 "use client";
-import type { ArticleType } from "@/common/types/article/article.type";
-import ArticleFooter from "../organism/ArticleFooter";
-import ArticleHeader from "../organism/ArticleHeader";
-import ArticleBody from "../organism/ArticleBody";
+import ArticleFooter from "../../organism/ArticleFooter";
+import ArticleHeader from "../../organism/ArticleHeader";
+import ArticleBody from "../../organism/ArticleBody";
+import type { ArticleType } from "@/common/types/page/article/article.type";
 
 export default function ArticleView(article: ArticleType) {
 	return (

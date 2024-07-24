@@ -8,7 +8,7 @@ import { SEARCH_LIMIT } from "@/common/queries/search.query";
 import Pagination from "../atom/Pagination";
 import { Frown } from "lucide-react";
 
-export default function SearchView({ type = "article" }: { type: string }) {
+export default function SearchView({ type }: { type?: string }) {
 	const [page, setPage] = useState(1);
 	const [searchedQuery, setSearchedQuery] = useState("");
 	const { isPending, data } = useSearch({

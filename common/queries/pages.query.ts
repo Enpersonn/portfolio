@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 
 
-export const PAGES_QUERY = groq`*[_type == "article"] {
+export const PAGES_QUERY = groq`*[_type == $type] {
     "teaserTitle": coalesce(teaserTitle, title ),
     "teaserText": coalesce(teaserText, entry),
     teaserImage,

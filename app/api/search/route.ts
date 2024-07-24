@@ -16,11 +16,12 @@ export const GET = async (req: Request) => {
     const c = client;
 
     const SKIP = Math.max(0, (pageInt - 1) * SEARCH_LIMIT);
+    const searchType = type || 'article';
 
     const data = await c.fetch(searchQueryWithLimit,{
         q: search?.split(' ').map((s) => `*${s}*`),
         limit: SEARCH_LIMIT * pageInt,
-        type: type,
+        type: searchType,
         skip: SKIP
     });
 

@@ -1,5 +1,5 @@
 import type { PreviewPageType } from "@/common/types/page/pages.type";
-import PageList from "../organism/PageList";
+import PageList from "../../organism/PageList";
 
 type ArticlesViewProps = {
 	articles: PreviewPageType[];

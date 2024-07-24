@@ -5,16 +5,17 @@ import ContentWrapper from "../wrapper/ContentWrapper";
 
 type PagesViewProps = {
 	pages: PreviewPageType[];
+	type?: "project" | "article";
 };
 
-const PageList = ({ pages }: PagesViewProps) => {
+const PageList = ({ type, pages }: PagesViewProps) => {
 	return (
 		<ContentWrapper>
 			<div className=" grid gap-5 md:grid-cols-3 mt-10 ">
 				{pages?.map((page) => {
 					return (
 						<div key={page.slug}>
-							<PageListItem {...page} />
+							<PageListItem page={page} type={type} />
 						</div>
 					);
 				})}

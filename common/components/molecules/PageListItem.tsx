@@ -3,11 +3,16 @@ import Link from "next/link";
 import SanityImage from "../atom/SanityImage";
 import type { PreviewPageType } from "@/common/types/page/pages.type";
 
-const PageListItem = (page: PreviewPageType) => {
+type PageListItemProps = {
+	type?: "project" | "article";
+	page: PreviewPageType;
+};
+
+const PageListItem = ({ page, type = "article" }: PageListItemProps) => {
 	return (
 		<Link
 			className=" card-style"
-			href={`/articles/article/${page.slug}`}
+			href={`${type === "article" ? "/articles/article/" : "/projects/project/"}${page.slug}`}
 			key={page.slug}
 		>
 			<div className=" group ">
