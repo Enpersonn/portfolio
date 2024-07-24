@@ -1,5 +1,8 @@
 import type { PropsWithChildren } from "react";
 import { type ArrayOfType, defineType } from "sanity";
+import { image } from "./image.schema";
+import { quote } from "./quote.schema";
+import { highlighted } from "./highlighted.schema";
 
 type TextSizeValues = "normal" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -61,6 +64,16 @@ export const getDefaultBlockSetup = ({
 	];
 };
 
+export const simpleRichText = defineType({
+	name: "simpleRichText",
+	type: "array",
+	of: [
+		...getDefaultBlockSetup({
+			headingLevels: ["normal", "h2", "h3", "h4"],
+		}),
+	],
+});
+
 export const richText = defineType({
 	name: "richText",
 	type: "array",
@@ -68,5 +81,8 @@ export const richText = defineType({
 		...getDefaultBlockSetup({
 			headingLevels: ["normal", "h2", "h3", "h4"],
 		}),
+		image,
+		quote,
+		highlighted,
 	],
 });
