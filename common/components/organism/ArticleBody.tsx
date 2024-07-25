@@ -1,4 +1,4 @@
-import type { ArticleBodyType } from "@/common/types/article/articleBody.type";
+import type { ArticleBodyType } from "@/common/types/page/article/articleBody.type";
 import PortableText from "../molecules/portableText/PortableText";
 import ContentWrapper from "../wrapper/ContentWrapper";
 
