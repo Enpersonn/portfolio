@@ -29,12 +29,14 @@ const type: {
 	highlighted: (props) => (
 		<div className=" my-5 items-center flex">
 			<Lightbulb size={32} className=" mr-3" />
-			<NativePortableText
-				value={props.value.text}
-				components={{
-					...DefaultComponents,
-				}}
-			/>
+			<div className=" w-full pl-3 border-l-[1px]">
+				<NativePortableText
+					value={props.value.text}
+					components={{
+						...DefaultComponents,
+					}}
+				/>
+			</div>
 		</div>
 	),
 };
