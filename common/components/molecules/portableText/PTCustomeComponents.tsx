@@ -1,8 +1,8 @@
-import type { PortableTextReactComponents } from "next-sanity";
-import SanityImage, { type SanityImageProps } from "../../atom/SanityImage";
-import { Lightbulb, Quote } from "lucide-react";
-import DefaultComponents from "./PTComponents";
 import { PortableText as NativePortableText } from "@portabletext/react";
+import { Lightbulb } from "lucide-react";
+import type { PortableTextReactComponents } from "next-sanity";
+import SanityImage from "../../atom/SanityImage";
+import DefaultComponents from "./PTComponents";
 
 const type: {
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
