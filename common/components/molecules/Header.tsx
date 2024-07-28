@@ -1,7 +1,6 @@
 import type { headerType } from "@/common/types/molecules/header.type";
-import { Calendar } from "lucide-react";
-import PortableText from "./portableText/PortableText";
 import PublishedDate from "../atom/PublishedDate";
+import PortableText from "./portableText/PortableText";
 
 const Header = (props: headerType) => {
 	return (
