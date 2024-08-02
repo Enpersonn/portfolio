@@ -1,13 +1,12 @@
-import { useState } from "react";
-import SearchBar from "../atom/SearchBar";
 import useSearch from "@/common/hooks/useSearch";
-import PageListSkeleton from "../organism/PageList.skeleton";
-import PageList from "../organism/PageList";
-import ContentWrapper from "../wrapper/ContentWrapper";
 import { SEARCH_LIMIT } from "@/common/queries/search.query";
-import Pagination from "../atom/Pagination";
 import { Frown } from "lucide-react";
-import Slider from "../atom/Slider";
+import { useState } from "react";
+import Pagination from "../atom/Pagination";
+import SearchBar from "../atom/SearchBar";
+import PageList from "../organism/PageList";
+import PageListSkeleton from "../organism/PageList.skeleton";
+import ContentWrapper from "../wrapper/ContentWrapper";
 
 export default function SearchView({ type }: { type?: string }) {
 	const [page, setPage] = useState(1);
