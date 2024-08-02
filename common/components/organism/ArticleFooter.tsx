@@ -1,4 +1,4 @@
-import type { ArticleFooterType } from "@/common/types/article/articleFooter.type";
+import { ArticleFooterType } from "@/common/types/page/article/articleFooter.type";
 import MoreOfTheSame from "../molecules/MoreOfTheSame";
 import References from "../molecules/References";
 
@@ -12,3 +12,4 @@ const ArticleFooter = (props: ArticleFooterType) => {
 };
 
 export default ArticleFooter;
+
