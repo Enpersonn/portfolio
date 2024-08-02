@@ -7,6 +7,7 @@ import ContentWrapper from "../wrapper/ContentWrapper";
 import { SEARCH_LIMIT } from "@/common/queries/search.query";
 import Pagination from "../atom/Pagination";
 import { Frown } from "lucide-react";
+import Slider from "../atom/Slider";
 
 export default function SearchView({ type }: { type?: string }) {
 	const [page, setPage] = useState(1);
