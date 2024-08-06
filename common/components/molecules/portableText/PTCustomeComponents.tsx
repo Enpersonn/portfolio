@@ -1,8 +1,10 @@
 import { PortableText as NativePortableText } from "@portabletext/react";
-import { Lightbulb } from "lucide-react";
+import { Lightbulb, LucideIcon } from "lucide-react";
 import type { PortableTextReactComponents } from "next-sanity";
 import SanityImage from "../../atom/SanityImage";
 import DefaultComponents from "./PTComponents";
+import Card from "../../wrapper/Card";
+import Icon from "../../atom/Icon";
 
 const type: {
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -37,6 +39,18 @@ const type: {
 					}}
 				/>
 			</div>
+		</div>
+	),
+
+	cardList: (props: any) => (
+		<div className="grid grid-cols-4 gap-4 p-4">
+			{props.value.cards.map((card: any) => {
+				return(
+				<Card key={card._key} className=" flex flex-col items-center justify-center aspect-square ">
+					<Icon icon={card.icon} size={84} />
+					{card.title}
+					</Card>
+			)})}
 		</div>
 	),
 };
