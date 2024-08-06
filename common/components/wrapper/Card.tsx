@@ -1,5 +1,7 @@
-const Card = ({ children }: { children: React.ReactNode }) => (
-	<div className=" rounded-[15px] overflow-hidden border-[1px] border-slate-600/50 w-full h-full">
+import { clsx } from "@/common/utils/classes";
+
+const Card = ({ children, className, ...props }: React.HTMLAttributes<HTMLDivElement> & { children: React.ReactNode }) => (
+	<div className={clsx(" rounded-[15px] overflow-hidden border-[1px] border-[#86868663] w-full h-full", className)} {...props}>
 		{children}
 	</div>
 );
