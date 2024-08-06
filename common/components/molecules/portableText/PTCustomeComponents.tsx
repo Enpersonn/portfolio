@@ -43,14 +43,26 @@ const type: {
 	),
 
 	cardList: (props: any) => (
-		<div className="grid grid-cols-4 gap-4 p-4">
+		<div className="grid grid-cols-4 gap-4">
 			{props.value.cards.map((card: any) => {
-				return(
-				<Card key={card._key} className=" flex flex-col items-center justify-center aspect-square ">
-					<Icon icon={card.icon} size={84} />
-					{card.title}
-					</Card>
-			)})}
+				switch (props.value.type) {
+					case "largeIcon":
+						return (
+							<div key={card._key} className=" flex flex-col items-center justify-center text-center aspect-square ">
+								<Icon icon={card.icon} size={84} />
+								{card.title}
+								
+							</div>
+						);
+					default:
+						return (
+							<Card key={card._key} className=" flex flex-col items-center justify-center text-center aspect-square ">
+								<Icon icon={card.icon} size={84} />
+								{card.title}
+							</Card>
+						);
+				}
+			})}
 		</div>
 	),
 };
