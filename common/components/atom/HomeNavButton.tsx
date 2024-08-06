@@ -1,5 +1,6 @@
 "use client";
 
+import { MoveRight } from "lucide-react";
 import NextLink from "next/link";
 import styled, { css } from "styled-components";
 
@@ -19,8 +20,7 @@ outline: none;
 
 
 
-&::after {
-    content: "------>";
+.arrow {
     display: flex;
     font-weight: 100;
     justify-content: start;
@@ -35,14 +35,19 @@ outline: none;
     }
 }
 
-&:hover::after {
-    left: -400px; 
-    opacity: 1;
+&:hover {
+
+    .arrow {
+        left: -250px; 
+        opacity: 1;
+    }
 }
 
-&:focus-visible::after {
-    left: -400px; 
-    opacity: 1;
+&:focus-visible {
+    .arrow {
+        left: -250px; 
+        opacity: 1;
+    }
 }
 
 &::before {
@@ -80,10 +85,22 @@ const HomeNavButton = ({
 	children,
 }: { href?: string; onClick?: () => void; children: React.ReactNode }) => {
 	if (href) {
-		return <HomeNavButtonLink href={href}>{children}</HomeNavButtonLink>;
+		return (
+			<HomeNavButtonLink href={href}>
+				<div className="arrow">
+					<MoveRight size={200} strokeWidth={0.3} />
+				</div>
+				{children}
+			</HomeNavButtonLink>
+		);
 	}
 	return (
-		<HomeNavButtonAction onClick={onClick}>{children}</HomeNavButtonAction>
+		<HomeNavButtonAction onClick={onClick}>
+			<div className="arrow">
+				<MoveRight size={200} strokeWidth={0.3} />
+			</div>
+			{children}
+		</HomeNavButtonAction>
 	);
 };
 export default HomeNavButton;
