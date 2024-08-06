@@ -12,21 +12,14 @@ export const aboutSchema = defineType({
             type: "string",
         },
         {
-            name: 'entrie',
-            title: 'Entrie',
-            type: 'richText',
-        },
-        {
             name: 'mainImage',
             title: 'Main Image',
             type: 'image',
-            group: 'articleHeader',
         },
         {
             name: 'content',
             title: 'Content',
             type: 'richText',
-            group: 'articleBody',
         },
     ]
 })
