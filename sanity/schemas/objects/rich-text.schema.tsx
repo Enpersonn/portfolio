@@ -3,6 +3,7 @@ import { type ArrayOfType, defineType } from "sanity";
 import { image } from "./image.schema";
 import { quote } from "./quote.schema";
 import { highlighted } from "./highlighted.schema";
+import { cardList } from "./cardList.schema";
 
 type TextSizeValues = "normal" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -84,5 +85,6 @@ export const richText = defineType({
 		image,
 		quote,
 		highlighted,
+		cardList,
 	],
 });
