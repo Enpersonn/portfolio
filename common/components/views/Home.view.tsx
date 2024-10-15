@@ -2,6 +2,7 @@ import Link from "next/link";
 import HomeNavButton from "../atom/HomeNavButton";
 import { Suspense } from "react";
 import { MoveRight } from "lucide-react";
+import { navigation } from "@/common/lib/navigation";
 
 export default function HomeView() {
 	return (
@@ -11,12 +12,11 @@ export default function HomeView() {
 				<div className=" flex flex-col items-start gap-y-6 p-10">
 					<div className=" flex flex-col gap-2 items-start ">
 						<Suspense fallback={<div>Loading...</div>}>
-							<HomeNavButton href={"./projects"}>Projects</HomeNavButton>
-							<HomeNavButton href={"./articles/discover"}>
-								Articles
-							</HomeNavButton>
-							<HomeNavButton href={"./about"}>About</HomeNavButton>
-							<HomeNavButton href={"./contact"}>Contact</HomeNavButton>
+						{
+							navigation.map((nav) => (
+								<HomeNavButton href={nav.href}>{nav.title}</HomeNavButton>
+								))
+							}
 						</Suspense>
 					</div>
 					<div className=" flex gap-2 px-5 justify-end items-center w-full">
