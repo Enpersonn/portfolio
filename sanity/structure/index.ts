@@ -1,5 +1,5 @@
-import { ConfigContext } from "sanity";
-import { StructureBuilder } from "sanity/structure";
+import type { ConfigContext } from "sanity";
+import type { StructureBuilder } from "sanity/structure";
 
 
 export const structure = (S: StructureBuilder, C: ConfigContext) => {
@@ -21,5 +21,13 @@ export const structure = (S: StructureBuilder, C: ConfigContext) => {
                 .title('Projects')
                 .schemaType('project')
                 .child(S.documentTypeList('project').title('Projects')),
+            S.listItem()
+                .title('Docs')
+                .child(S.list().title('Docs').items([
+                    S.listItem()
+                        .title('Hooks')
+                        .schemaType('hookDocs')
+                        .child(S.documentTypeList('hookDocs').title('Hooks')),
+                ])),
         ])
 }
