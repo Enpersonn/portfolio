@@ -4,6 +4,7 @@ import { useReducer } from 'react';
 import Button from '../atom/Button/Button';
 import DetailViewButtonWrapper from '../wrapper/DetailViewButtonWrapper';
 import { clsx } from '@/common/utils/classes';
+import { Clipboard, Copy } from 'lucide-react';
 
 type CodeBlockItem = {
 	_type: 'code';
@@ -30,19 +31,35 @@ const CodeBlock = ({
 }) => {
 	const [isDetailView, setIsDetailView] = useReducer((p) => !p, false);
 
+	const handleCopy = () => {
+		navigator.clipboard.writeText(
+			code.map((item) => (item._type === 'code' ? item.content : item.preview)).join('\n'),
+		);
+	};
+
 	return (
-		<div className={clsx(hasExamples && 'border border-shadow-gray rounded-lg')}>
+		<div className={clsx(hasExamples && 'border border-shadow-gray rounded-lg overflow-hidden w-full')}>
 			{hasExamples && (
 				<div className='px-10 flex justify-between items-center border-b border-shadow-gray mb-10 py-3 '>
 					<p>{language}</p>
-					{code.filter((item) => item._type === 'exampleBlock').length > 0 && (
-						<button type='button' onClick={setIsDetailView} className=' '>
-							{isDetailView ? 'Hide' : 'Show'} Examples
+					<div className=' flex gap-10'>
+						{code.filter((item) => item._type === 'exampleBlock').length > 0 && (
+							<button type='button' onClick={setIsDetailView} className=' '>
+								{isDetailView ? 'Hide' : 'Show'} Examples
+							</button>
+						)}
+						<button
+							type='button'
+							onClick={handleCopy}
+							className=' flex items-center gap-2 transition-all active:translate-y-1'
+						>
+							Copy
+							<Clipboard size={14} />
 						</button>
-					)}
+					</div>
 				</div>
 			)}
-			<div className={clsx(hasExamples && 'px-10 my-5')}>
+			<div className={clsx(hasExamples && 'px-5 pb-5 overflow-auto')}>
 				{code.map((item) => {
 					if (item._type === 'code') {
 						return <pre>{item.content}</pre>;

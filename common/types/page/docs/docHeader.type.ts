@@ -1,8 +1,7 @@
-import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
-
+import type { SanityRichtTextType } from '../../atom/richText.type';
 
 export type DocHeaderType = {
-    title: string;
-    entry: string;
-    publishedAt: string;
+	title: string;
+	entry: SanityRichtTextType;
+	publishedAt: string;
 };
