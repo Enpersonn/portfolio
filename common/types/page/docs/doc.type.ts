@@ -11,8 +11,8 @@ export type DocType = BasePageType & {
 
 
 export type DocsType = {
-    body: DocsBodyType;
-    header: DocHeaderType;
-    footer: DocFooterType;
+    body?: DocsBodyType;
+    header?: DocHeaderType;
+    footer?: DocFooterType;
 };
 
