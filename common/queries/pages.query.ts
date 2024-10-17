@@ -1,5 +1,4 @@
-import { groq } from "next-sanity";
-
+import { groq } from 'next-sanity';
 
 export const PAGES_QUERY = groq`*[_type == $type] {
     "teaserTitle": coalesce(teaserTitle, title ),
@@ -14,3 +13,10 @@ export const PAGE_REFERENCE_QUERY = groq`{
     teaserImage,
     "slug": slug.current}
     `;
+
+export const NAV_QUERY = groq`*[_type == $type] {
+    "slug": slug.current,
+    "type": _type,
+    title
+}
+`;
