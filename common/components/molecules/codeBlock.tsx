@@ -1,10 +1,9 @@
 'use client';
 import type { SanityRichtTextType } from '@/common/types/atom/richText.type';
-import { useReducer } from 'react';
-import Button from '../atom/Button/Button';
-import DetailViewButtonWrapper from '../wrapper/DetailViewButtonWrapper';
 import { clsx } from '@/common/utils/classes';
-import { Clipboard, Copy } from 'lucide-react';
+import { Clipboard } from 'lucide-react';
+import { useReducer } from 'react';
+import DetailViewButtonWrapper from '../wrapper/DetailViewButtonWrapper';
 
 type CodeBlockItem = {
 	_type: 'code';

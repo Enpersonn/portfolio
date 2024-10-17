@@ -5,7 +5,7 @@ import Icon from '../../atom/Icon';
 import SanityImage from '../../atom/SanityImage';
 import Card from '../../wrapper/Card';
 import DefaultComponents from './PTComponents';
-import CodeBlock from '../CodeBlock';
+import CodeBlock from '@/common/components/molecules/CodeBlock';
 
 const type: {
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
