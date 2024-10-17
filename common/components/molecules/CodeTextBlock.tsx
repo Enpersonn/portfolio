@@ -19,7 +19,7 @@ type ExampleBlockItem = {
 
 type CodeProp = (CodeBlockItem | ExampleBlockItem)[];
 
-const CodeBlock = ({
+const CodeTextBlock = ({
 	hasExamples = true,
 	language,
 	code,
@@ -86,9 +86,9 @@ const Example = ({
 }: { isDetailView: boolean; preview: string; title: string; description: SanityRichtTextType }) => {
 	return (
 		<DetailViewButtonWrapper isDetailView={isDetailView} title={title} description={description} preview={preview}>
-			<CodeBlock hasExamples={false} language='ts' code={[{ _type: 'code', content: preview }]} />
+			<CodeTextBlock hasExamples={false} language='ts' code={[{ _type: 'code', content: preview }]} />
 		</DetailViewButtonWrapper>
 	);
 };
 
-export default CodeBlock;
+export default CodeTextBlock;
