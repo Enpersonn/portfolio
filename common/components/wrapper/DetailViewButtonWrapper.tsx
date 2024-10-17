@@ -1,7 +1,7 @@
 import type { SanityRichtTextType } from '@/common/types/atom/richText.type';
 import { useReducer } from 'react';
 import PortableText from '../molecules/portableText/PortableText';
-import CodeBlock from '../molecules/CodeBlock';
+import CodeTextBlock from '../molecules/CodeTextBlock';
 
 const DetailViewButtonWrapper = ({
 	children,
@@ -26,7 +26,7 @@ const DetailViewButtonWrapper = ({
 					<div className='absolute top-1/2 left-1/3 -translate-x-1/3 -translate-y-1/2'>
 						<div className='max-w-[90vw] max-h-[70vh] overflow-auto  grid md:grid-cols-5 gap-10 bg-black border border-shadow-gray p-3 md:p-10 rounded-lg'>
 							<div className='w-full md:col-span-2'>
-								<CodeBlock language='ts' code={[{ _type: 'code', content: preview }]} />
+								<CodeTextBlock language='ts' code={[{ _type: 'code', content: preview }]} />
 							</div>
 							<div className=' w-full md:col-span-3'>
 								<h2 className='text-2xl font-bold'>{title}</h2>
