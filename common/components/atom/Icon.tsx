@@ -1,18 +1,18 @@
-import { Code, type LucideIcon, LucideProps, Star, Type } from "lucide-react";
+import { Code, type LucideIcon, type LucideProps, Star, Type } from 'lucide-react';
 
 const SUPPORTED_ICONS: Record<string, LucideIcon> = {
-    code: Code,
-    design: Type,
-    type: Type,
+	code: Code,
+	design: Type,
+	type: Type,
 };
 
 interface IconProps extends Omit<LucideProps, 'ref'> {
-    icon: string;
+	icon: string;
 }
 
 const Icon = ({ icon, ...props }: IconProps) => {
-    const IconComponent = SUPPORTED_ICONS[icon.toLowerCase() as keyof typeof SUPPORTED_ICONS] || Star;
-    return <IconComponent {...props} />;
+	const IconComponent = SUPPORTED_ICONS[icon.toLowerCase() as keyof typeof SUPPORTED_ICONS] || Star;
+	return <IconComponent {...props} />;
 };
 
 export default Icon;
