@@ -9,7 +9,7 @@ export default async function DocsLayout({ children }: { children: React.ReactNo
 	return (
 		<div className=' grid grid-cols-12 h-full m-10 gap-10 '>
 			<DocsNav docs={docsNav} />
-			<div className=' col-span-8 col-start-3 '>{children}</div>
+			<div className=' col-span-6 col-start-4 '>{children}</div>
 		</div>
 	);
 }
