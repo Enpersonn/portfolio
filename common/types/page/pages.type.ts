@@ -16,3 +16,7 @@ export type NavPageType = {
 	title: string;
 	type: string;
 };
+
+export type CategoryNavigationType = NavPageType & {
+	children: CategoryNavigationType[];
+};
