@@ -1,7 +1,7 @@
 const ContentWrapper = ({ children }: { children: React.ReactNode }) => {
 	return (
-		<div className={'grid grid-cols-12'}>
-			<div className=' col-span-8 col-start-3 '>{children}</div>
+		<div className={'grid grid-cols-6'}>
+			<div className=' col-span-4 col-start-2 '>{children}</div>
 		</div>
 	);
 };
