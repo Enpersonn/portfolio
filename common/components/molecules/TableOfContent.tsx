@@ -1,46 +1,46 @@
-import type { tableOfContentType } from "@/common/types/molecules/tableOfContent.type";
-import Link from "next/link";
+import type { tableOfContentType } from '@/common/types/molecules/tableOfContent.type';
+import Link from 'next/link';
 
 const TableOfContent = ({ headlines }: tableOfContentType) => {
 	return (
-		<div className=" mt-20">
-			<div className=" w-full border-b-[1px] border-white">
-				<h2>Table of content</h2>
+		<div className=' my-5'>
+			<div className=' w-full border-b-[1px] border-white'>
+				<p className=' text-xl font-bold'>Table of content</p>
 			</div>
-			<div className=" pl-5">
+			<div className=' pl-5'>
 				{headlines?.map((headline, index) => {
 					switch (headline.style) {
-						case "h2":
+						case 'h2':
 							return (
 								<Link
 									key={headline._key}
 									href={`#${headline.children[0].text}`}
-									className=" hover:underline"
+									className=' hover:underline'
 								>
-									<h2>{headline.children[0].text}</h2>
+									<p className=' text-lg font-bold'>{headline.children[0].text}</p>
 								</Link>
 							);
-						case "h3":
+						case 'h3':
 							return (
-								<div className=" pl-5">
+								<div className=' pl-5'>
 									<Link
 										key={headline._key}
 										href={`#${headline.children[0].text}`}
-										className=" pl-2  border-l block hover:underline"
+										className=' pl-2  border-l block hover:underline'
 									>
-										<h3>{headline.children[0].text}</h3>
+										<p className=' text-lg '>{headline.children[0].text}</p>
 									</Link>
 								</div>
 							);
-						case "h4":
+						case 'h4':
 							return (
-								<div className=" pl-5">
+								<div className=' pl-5'>
 									<Link
 										key={headline._key}
 										href={`#${headline.children[0].text}`}
-										className=" pl-2  border-l block hover:underline"
+										className=' pl-2  border-l block hover:underline'
 									>
-										<h4>{headline.children[0].text}</h4>
+										<p className=' font-bold'>{headline.children[0].text}</p>
 									</Link>
 								</div>
 							);
