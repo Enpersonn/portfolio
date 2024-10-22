@@ -37,42 +37,44 @@ const CodeTextBlock = ({
 	};
 
 	return (
-		<div className={clsx(hasExamples && 'border border-shadow-gray rounded-lg overflow-hidden w-full')}>
-			{hasExamples && (
-				<div className='px-10 flex justify-between items-center border-b border-shadow-gray mb-10 py-3 '>
-					<p>{language}</p>
-					<div className=' flex gap-10'>
-						{code.filter((item) => item._type === 'exampleBlock').length > 0 && (
-							<button type='button' onClick={setIsDetailView} className=' '>
-								{isDetailView ? 'Hide' : 'Show'} Examples
+		<div className='grid grid-cols-2'>
+			<div className={clsx(hasExamples && 'border border-shadow-gray rounded-lg overflow-hidden w-full')}>
+				{hasExamples && (
+					<div className='px-10 flex justify-between items-center border-b border-shadow-gray mb-10 py-3 '>
+						<p>{language}</p>
+						<div className=' flex gap-10'>
+							{code.filter((item) => item._type === 'exampleBlock').length > 0 && (
+								<button type='button' onClick={setIsDetailView} className=' '>
+									{isDetailView ? 'Hide' : 'Show'} Examples
+								</button>
+							)}
+							<button
+								type='button'
+								onClick={handleCopy}
+								className=' flex items-center gap-2 transition-all active:translate-y-1'
+							>
+								Copy
+								<Clipboard size={14} />
 							</button>
-						)}
-						<button
-							type='button'
-							onClick={handleCopy}
-							className=' flex items-center gap-2 transition-all active:translate-y-1'
-						>
-							Copy
-							<Clipboard size={14} />
-						</button>
+						</div>
 					</div>
+				)}
+				<div className={clsx(hasExamples && 'px-5 pb-5 overflow-auto')}>
+					{code.map((item) => {
+						if (item._type === 'code') {
+							return <pre>{item.content}</pre>;
+						}
+						return (
+							<Example
+								key={item.title}
+								isDetailView={isDetailView}
+								preview={item.preview}
+								title={item.title}
+								description={item.description}
+							/>
+						);
+					})}
 				</div>
-			)}
-			<div className={clsx(hasExamples && 'px-5 pb-5 overflow-auto')}>
-				{code.map((item) => {
-					if (item._type === 'code') {
-						return <pre>{item.content}</pre>;
-					}
-					return (
-						<Example
-							key={item.title}
-							isDetailView={isDetailView}
-							preview={item.preview}
-							title={item.title}
-							description={item.description}
-						/>
-					);
-				})}
 			</div>
 		</div>
 	);
