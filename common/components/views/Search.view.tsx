@@ -1,16 +1,16 @@
-import useSearch from "@/common/hooks/useSearch";
-import { SEARCH_LIMIT } from "@/common/queries/search.query";
-import { Frown } from "lucide-react";
-import { useState } from "react";
-import Pagination from "../atom/Pagination";
-import SearchBar from "../atom/SearchBar";
-import PageList from "../organism/PageList";
-import PageListSkeleton from "../organism/PageList.skeleton";
-import ContentWrapper from "../wrapper/ContentWrapper";
+import useSearch from '@/common/hooks/useSearch';
+import { SEARCH_LIMIT } from '@/common/queries/search.query';
+import { Frown } from 'lucide-react';
+import { useState } from 'react';
+import Pagination from '../atom/Pagination';
+import SearchBar from '../atom/SearchBar';
+import PageList from '../organism/PageList';
+import PageListSkeleton from '../organism/PageList.skeleton';
+import ContentWrapper from '../wrapper/ContentWrapper';
 
 export default function SearchView({ type }: { type?: string }) {
 	const [page, setPage] = useState(1);
-	const [searchedQuery, setSearchedQuery] = useState("");
+	const [searchedQuery, setSearchedQuery] = useState('');
 	const { isPending, data } = useSearch({
 		page,
 		search: searchedQuery,
@@ -18,13 +18,13 @@ export default function SearchView({ type }: { type?: string }) {
 	});
 	const PAGES = Math.ceil(data?.count ?? 1 / 10);
 
-	const [query, setQuery] = useState("");
+	const [query, setQuery] = useState('');
 
 	const handleSearch = () => {
 		if (query === searchedQuery) return;
 		const q = query.trim();
-		if (q === "") {
-			setQuery("");
+		if (q === '') {
+			setQuery('');
 			return;
 		}
 		setSearchedQuery(q);
@@ -42,45 +42,34 @@ export default function SearchView({ type }: { type?: string }) {
 
 	return (
 		<>
-			<ContentWrapper>
-				<div className=" flex items-center justify-center mt-10">
-					<SearchBar
-						type="text"
-						placeholder="Search for projects..."
-						value={query}
-						onChange={(e) => setQuery(e.target.value)}
-						onKeyDown={(e) => {
-							if (e.key === "Enter") handleSearch();
-						}}
-					/>
-				</div>
-			</ContentWrapper>
+			<div className=' flex items-center justify-center mt-10'>
+				<SearchBar
+					type='text'
+					placeholder='Search for projects...'
+					value={query}
+					onChange={(e) => setQuery(e.target.value)}
+					onKeyDown={(e) => {
+						if (e.key === 'Enter') handleSearch();
+					}}
+				/>
+			</div>
 			{isPending ? (
-				<ContentWrapper>
-					<PageListSkeleton n={SEARCH_LIMIT} />
-				</ContentWrapper>
+				<PageListSkeleton n={SEARCH_LIMIT} />
 			) : searchedQuery && !!data && data?.count !== 0 ? (
 				<PageList pages={data?.items} />
 			) : (
 				searchedQuery && (
-					<ContentWrapper>
-						<div className=" mt-10 flex justify-center items-center gap-2">
-							<Frown />
-							<p>
-								No results found for
-								<strong>{searchedQuery}</strong>
-							</p>
-						</div>
-					</ContentWrapper>
+					<div className=' mt-10 flex justify-center items-center gap-2'>
+						<Frown />
+						<p>
+							No results found for
+							<strong>{searchedQuery}</strong>
+						</p>
+					</div>
 				)
 			)}
 			{(data?.count ?? 0) > SEARCH_LIMIT && (
-				<Pagination
-					page={page}
-					total={PAGES}
-					nextPage={nextPage}
-					prevPage={prevPage}
-				/>
+				<Pagination page={page} total={PAGES} nextPage={nextPage} prevPage={prevPage} />
 			)}
 		</>
 	);

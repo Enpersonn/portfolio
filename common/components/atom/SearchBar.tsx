@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const SearchBarDefault = styled.input`
     width: 50vw;
@@ -53,11 +53,7 @@ type searchBarProps = {
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 const SearchBar = ({ small = false, ...props }: searchBarProps) => {
-	return small ? (
-		<SearchBarSmall {...props} />
-	) : (
-		<SearchBarDefault {...props} />
-	);
+	return small ? <SearchBarSmall {...props} /> : <SearchBarDefault {...props} />;
 };
 
 export default SearchBar;
