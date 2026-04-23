@@ -2,6 +2,7 @@
 import CategoryNavigation from '@/common/components/molecules/CategoryNavigation';
 import PageHeader from '@/common/components/organism/PageHeader';
 import NavigationProvider from '@/common/providers/Navigation/Navigation.provider';
+import { projectsNavTable } from '@/common/lib/navigation/projectsNav.table';
 
 export default function PagesLayout({ children }: { children: React.ReactNode }) {
 	return (
@@ -9,7 +10,7 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
 			<PageHeader />
 			<NavigationProvider>
 				<div className=' grid grid-cols-12 h-full m-10 gap-10 '>
-					<CategoryNavigation />
+					<CategoryNavigation pagesTable={projectsNavTable} root='/projects' />
 					{children}
 				</div>
 			</NavigationProvider>

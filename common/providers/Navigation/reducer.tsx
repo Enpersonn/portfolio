@@ -5,7 +5,7 @@ export type NavigationReducerAction =
 	| { page: 'articles' }
 	| { page: 'projects' }
 	| { page: 'docs' }
-	//Static pages
+	//Static pages not reached by navigation yet
 	| { page: 'about' }
 	| { page: 'contact' };
 
